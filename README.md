@@ -1,14 +1,13 @@
-# internet-programming-cat2
+# Internet Programming CAT2
 # My Life Journey Portfolio Website
+
 **✨✨🚀🚀🚀🚀🚀🎉🎉**
-check the live site
 
-
+## 🌍 Check the Live Site
+[Click here to visit](https://prey801.github.io/internet-programming-cat2/)
 
 ![image](https://github.com/user-attachments/assets/2541a700-644c-4a1a-9c57-9e4470b70712)
 ![image](https://github.com/user-attachments/assets/71dcf982-0847-4e8f-87b9-52f7cab390f6)
-
-
 
 ## 🚀 Overview
 This is a personal portfolio project showcasing my life journey, experiences, skills, and aspirations. It is designed to be a visually appealing and informative representation of my personal and professional growth.
@@ -65,8 +64,8 @@ git clone https://github.com/prey801/internet-programming-cat2
 
 ## 📞 Contact
 Feel free to reach out:
-- 📧 Email: [musyokibrian047@gmail.com](musyokibrian047@gmail.com)
-- 💼 LinkedIn: (https://www.linkedin.com/in/brian-musyoki-271a70260/)
+- 📧 Email: [musyokibrian047@gmail.com](mailto:musyokibrian047@gmail.com)
+- 💼 LinkedIn: [Brian Musyoki](https://www.linkedin.com/in/brian-musyoki-271a70260/)
 
 ---
 💙 Made with passion to showcase my life journey!
