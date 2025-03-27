@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Life Journey Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .dark-mode {
+            --bg-color: #111827;
+            --text-color: #f9fafb;
+            --primary-color: #8b5cf6;
+            --primary-hover: #7c3aed;
+            --secondary-color: #d946ef;
+            --secondary-hover: #c81eef;
+            --accent-color: #38bdf8;
+            --accent-hover: #22c55e;
+            --card-bg: #1f2937;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --border-color: #4a5568;
+        }
+        .light-mode {
+            --bg-color: #f9fafb;
+            --text-color: #111827;
+            --primary-color: #8b5cf6;
+            --primary-hover: #7c3aed;
+            --secondary-color: #d946ef;
+            --secondary-hover: #c81eef;
+            --accent-color: #38bdf8;
+            --accent-hover: #22c55e;
+            --card-bg: #ffffff;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --border-color: #e5e7eb;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+        .vibrant-blue {
+            background-color: var(--primary-color);
+        }
+        .vibrant-blue-hover {
+            background-color: var(--primary-hover);
+        }
+        .soft-purple {
+            background-color: var(--secondary-color);
+        }
+        .text-vibrant-blue {
+            color: var(--primary-color);
+        }
+        .text-soft-purple {
+            color: var(--secondary-color);
+        }
+        .shadow-vibrant {
+            box-shadow: var(--card-shadow);
+        }
+        .transition-all {
+            transition: all 0.3s ease-in-out;
+        }
+        .scale-hover:hover {
+            transform: scale(1.03);
+        }
+        .pulse-animation {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.6;
+            }
+        }
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 0.5rem;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border: 1px solid var(--border-color);
+        }
+        .project-card:hover {
+            transform: translateY(-0.5rem);
+            box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.15), 0 3px 5px -1px rgba(0, 0, 0, 0.1);
+        }
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+        }
+        .mode-switch {
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 9999px;
+            transition: background-color 0.3s ease;
+        }
+        .mode-switch:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .dark-sun {
+            display: none;
+        }
+        .dark-mode .light-sun {
+            display: none;
+        }
+        .dark-mode .dark-sun {
+            display: block;
+        }
+
+        /* Make nav links visible on larger screens */
+        .nav-links {
+            display: flex !important;
+        }
+        
+        #hamburger-btn {
+            display: none !important;
+        }
+        /* Fix the header to the top */
+        header {
+            position: fixed; /* Make it stick to the top */
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100; 
+        }
+        body {
+            padding-top: 4rem; 
+        }
+
+        /* Mobile menu styles */
+        #mobile-menu {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            #mobile-menu {
+                display: block;
+            }
+             body {
+                padding-top: 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:dark-mode light:light-mode">
+    <header class="vibrant-blue text-white py-4 shadow-md rounded-md">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#home" class="text-xl font-semibold hover:text-blue-200 transition-colors duration-300 pulse-animation">My Portfolio</a>
+            <div class="flex items-center">
+                <nav class="nav-links mr-4">
+                    <ul class="flex space-x-6">
+                        <li><a href="#home" class="hover:text-blue-200 transition-colors duration-300">Home</a></li>
+                        <li><a href="#childhood" class="hover:text-blue-200 transition-colors duration-300">Childhood</a></li>
+                        <li><a href="#education" class="hover:text-blue-200 transition-colors duration-300">Education</a></li>
+                        <li><a href="#skills" class="hover:text-blue-200 transition-colors duration-300">Skills</a></li>
+                        <li><a href="#aspirations" class="hover:text-blue-200 transition-colors duration-300">Aspirations</a></li>
+                        <li><a href="#contact" class="hover:text-blue-200 transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </nav>
+                <button id="mode-switch" class="mode-switch focus:outline-none" aria-label="Toggle Dark/Light Mode">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white light-sun">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.636l-.707.707M21 12h-2.25m-.636 6.364l-.707-.707M12 21v-2.25m-6.364-.636l.707-.707M3 12h2.25m.636-6.364l.707.707M12 15.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-white dark-sun">
+                        <path d="M12 8a4 4 0 100-8 4 4 0 000 8zM2 12a10 10 0 1120 0 10 10 0 01-20 0zM12 2a8 8 0 00-8 8 8 8 0 008 8 8 8 0 008-8 8 8 0 00-8-8z" />
+                    </svg>
+                </button>
+            </div>
+            <button id="hamburger-btn" class="md:hidden text-white focus:outline-none mr-2" aria-label="Toggle Navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-90 z-20">
+        <div class="bg-gray-800 w-80 h-full absolute right-0 p-6">
+            <div class="flex justify-end mb-4">
+                <button id="close-menu-btn" class="text-white focus:outline-none" aria-label="Close Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="block">
+                <ul class="space-y-4">
+                    <li><a href="#home" class="block text-lg text-white hover:text-blue-300 transition-colors duration-300">Home</a></li>
+                    <li><a href="#childhood" class="block text-lg text-white hover:text-blue-300 transition-colors duration-300">Childhood</a></li>
+                    <li><a href="#education" class="block text-lg text-white hover:text-blue-300 transition-colors duration-300">Education</a></li>
+                    <li><a href="#skills" class="block text-lg text-white hover:text-blue-300 transition-colors duration-300">Skills</a></li>
+                    <li><a href="#aspirations" class="block text-lg text-white hover:text-blue-300 transition-colors duration-300">Aspirations</a></li>
+                    <li><a href="#contact" class="block text-lg text-white hover:text-blue-300 transition-colors duration-300">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <main class="container mx-auto px-4 py-8">
+        <section id="home" class="mb-16 rounded-lg shadow-vibrant transition-all scale-hover">
+            <div class="bg-card p-6 rounded-lg">
+                <h2 class="text-3xl font-semibold mb-4 text-vibrant-blue">Hello, I'm Brian Muuo</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Welcome to my personal portfolio! This website is a journey through my life, showcasing my experiences, achievements, and aspirations.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                    I'm Student Status, passionate about tech. Explore the different stages of my life and get to know me better.
+                </p>
+            </div>
+        </section>
+        <section id="childhood" class="mb-16 rounded-lg shadow-vibrant transition-all scale-hover">
+            <div class="bg-card p-6 rounded-lg">
+                <h2 class="text-3xl font-semibold mb-4 text-vibrant-blue">Childhood</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    My childhood was filled with laughter, family gatherings, and a love for exploring the outdoors.  I grew up in machakos with my Family members. 
+                     One of my fondest memories is hunting a deer with them  These early experiences shaped my Personality traits and the person  am today.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                    [Add more details about your childhood]
+                </p>
+            </div>
+        </section>
+        <section id="education" class="mb-16 rounded-lg shadow-vibrant transition-all scale-hover">
+            <div class="bg-card p-6 rounded-lg">
+                <h2 class="text-3xl font-semibold mb-4 text-vibrant-blue">Education</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    I pursued my education at Zetech University, where I studied IT. 
+                     My academic journey was marked by actively creating new projects  
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                    have also aquired some certification
+                    cisco networking
+                </p>
+            </div>
+        </section>
+        <section id="skills" class="mb-16 rounded-lg shadow-vibrant transition-all scale-hover">
+            <div class="bg-card p-6 rounded-lg">
+                <h2 class="text-3xl font-semibold mb-4 text-vibrant-blue">Skills and Talents</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Here's a breakdown of my skills and talents:
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-soft-purple p-4 rounded-lg shadow-md transition-all scale-hover">
+                        <h3 class="text-lg font-semibold text-vibrant-blue">Technical Skills</h3>
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                            <li>JavaScript (ES6+)</li>
+                            <li>flutter</li>
+                            <li>JAVA</li>
+                            <li>python </li>
+                            <li>React</li>
+                        </ul>
+                    </div>
+                    <div class="bg-soft-purple p-4 rounded-lg shadow-md transition-all scale-hover">
+                        <h3 class="text-lg font-semibold text-vibrant-blue">Soft Skills</h3>
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li>Communication</li>
+                            <li>Teamwork</li>
+                            <li>Problem-solving</li>
+                            <li>hardworking</li>
+                        </ul>
+                    </div>
+                    <div class="bg-soft-purple p-4 rounded-lg shadow-md transition-all scale-hover">
+                        <h3 class="text-lg font-semibold text-vibrant-blue">Hobbies and Interests</h3>
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li>coding</li>
+                            <li>Reading</li>
+                            <li>swimming</li>
+                            <li>Bike ridding</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="aspirations" class="mb-16 rounded-lg shadow-vibrant transition-all scale-hover">
+            <div class="bg-card p-6 rounded-lg">
+                <h2 class="text-3xl font-semibold mb-4 text-vibrant-blue">Future Aspirations</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Looking ahead, I aspire to the best version of myself. I am passionate about data scince  and hope to contribute to the field by helping develop new tools
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                    [Add more details about your aspirations]
+                </p>
+            </div>
+        </section>
+        <section id="contact" class="mb-16 rounded-lg shadow-vibrant transition-all scale-hover">
+            <div class="bg-card p-6 rounded-lg">
+                <h2 class="text-3xl font-semibold mb-4 text-vibrant-blue">Contact Me</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    I'm always open to connecting! Feel free to reach out through the following channels:
+                </p>
+                <ul class="list-none space-y-2 mt-4">
+                    <li><strong>Email:</strong> <a href="musyokibrian047@gmail.com" class="text-blue-500 hover:text-blue-700 transition-colors duration-300">musyokibrian047@gmail.com</a></li>
+                    <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/brian-musyoki-271a70260/" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-700 transition-colors duration-300">linkedin.com/in/brian-musyoki</a></li>
+                    <li><strong>GitHub:</strong> <a href="https://github.com/prey801" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-700 transition-colors duration-300">github.com/prey801</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerBtn = document.getElementById("hamburger-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+            const closeMenuBtn = document.getElementById("close-menu-btn");
+            const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const sections = document.querySelectorAll('section');
+            const modeSwitch = document.getElementById('mode-switch');
+            const body = document.body;
+
+            function toggleMobileMenu() {
+                mobileMenu.classList.toggle("hidden");
+            }
+
+            if (hamburgerBtn) {
+                hamburgerBtn.addEventListener("click", toggleMobileMenu);
+            }
+            if (closeMenuBtn) {
+                closeMenuBtn.addEventListener("click", toggleMobileMenu);
+            }
+
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener("click", toggleMobileMenu);
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(event.target) && event.target !== hamburgerBtn) {
+                    toggleMobileMenu();
+                }
+            });
+
+            function updateActiveNavLink() {
+                let currentSectionId = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (window.scrollY >= sectionTop - 100 && window.scrollY < sectionTop + sectionHeight - 100) {
+                        currentSectionId = section.getAttribute('id');
+                    }
+                });
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').slice(1) === currentSectionId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', updateActiveNavLink);
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                     if (window.innerWidth < 768) {
+                        toggleMobileMenu();
+                    }
+                });
+            });
+
+            const savedMode = localStorage.getItem('mode');
+            if (savedMode) {
+                body.classList.add(savedMode);
+            } else {
+                body.classList.add('light-mode');
+            }
+
+            modeSwitch.addEventListener('click', () => {
+                if (body.classList.contains('light-mode')) {
+                    body.classList.remove('light-mode');
+                    body.classList.add('dark-mode');
+                    localStorage.setItem('mode', 'dark-mode');
+                } else {
+                    body.classList.remove('dark-mode');
+                    body.classList.add('light-mode');
+                    localStorage.setItem('mode', 'light-mode');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
