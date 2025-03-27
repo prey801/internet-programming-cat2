@@ -4,7 +4,7 @@
 **✨✨🚀🚀🚀🚀🚀🎉🎉**
 
 ## 🌍 Check the Live Site
-[Click here to visit](https://prey801.github.io/internet-programming-cat2/)
+[Click to visit site](https://prey801.github.io/internet-programming-cat2/)
 
 ![image](https://github.com/user-attachments/assets/2541a700-644c-4a1a-9c57-9e4470b70712)
 ![image](https://github.com/user-attachments/assets/71dcf982-0847-4e8f-87b9-52f7cab390f6)
