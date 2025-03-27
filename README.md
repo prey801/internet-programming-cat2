@@ -31,14 +31,10 @@ This is a personal portfolio project showcasing my life journey, experiences, sk
 - **Font** - Inter font for typography.
 
 ## 📁 Code Structure
+**ISSUE** - having the html css and js on different files had some issues... i tried to fix them but it was not worthy the trouble to have them in diffrent files do ahve intergrated in the same file
 ```
 📂 my-life-journey-portfolio
 ├── 📄 index.html  # Main HTML file
-├── 📂 css
-│   ├── 📄 styles.css  # Main styles
-├── 📂 js
-│   ├── 📄 script.js  # Interactivity scripts
-└── 📂 assets  # Images and other assets
 ```
 
 ## 📌 Sections
